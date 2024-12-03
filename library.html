@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    /* General Reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Arial', sans-serif;
+        line-height: 1.6;
+        background-color: #f9f9f9;
+        color: #333;
+    }
+
+    /* Header */
+    .header {
+        text-align: center;
+        padding: 20px;
+        background-color: #007bff;
+        color: white;
+    }
+
+    .header h1 {
+        font-size: 36px;
+    }
+
+    .header p {
+        font-size: 18px;
+    }
+
+    /* Main Container */
+    .main-container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Book Catalog Section */
+    .book-catalog h2 {
+        font-size: 24px;
+        color: #007bff;
+        margin-bottom: 10px;
+    }
+
+    .book-catalog .book-form-container form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .book-catalog label {
+        font-size: 14px;
+    }
+
+    .book-catalog input,
+    .book-catalog select {
+        padding: 10px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .book-catalog .button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .book-catalog .button:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+    }
+
+    .book-list {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .book-list li {
+        background: #f1f1f1;
+        margin: 10px 0;
+        padding: 15px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    /* Transaction Section */
+    .book-transaction h2 {
+        font-size: 24px;
+        color: #007bff;
+        margin-bottom: 10px;
+    }
+
+    .transaction-form-container form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .transaction-form-container select {
+        padding: 10px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .transaction-form-container .button {
+        padding: 10px 20px;
+        background-color: #28a745;
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .transaction-form-container .button:hover {
+        background-color: #218838;
+        transform: scale(1.05);
+    }
+
+    /* Footer */
+    .footer {
+        text-align: center;
+        padding: 10px;
+        background-color: #f1f1f1;
+        margin-top: 20px;
+        font-size: 14px;
+    }
+</style>
+
+<body>
+    <header class="header">
+        <h1>Library Management System</h1>
+        <p>Catalog, Issue, and Return books easily.</p>
+    </header>
+
+    <main class="main-container">
+        <!-- Book Catalog Section -->
+        <section class="book-catalog">
+            <h2>Book Catalog</h2>
+            <div class="book-form-container">
+                <form id="book-form">
+                    <label for="book-title">Book Title:</label>
+                    <input type="text" id="book-title" placeholder="Enter book title" required>
+
+                    <label for="book-author">Author:</label>
+                    <input type="text" id="book-author" placeholder="Enter author's name" required>
+
+                    <label for="book-availability">Availability:</label>
+                    <select id="book-availability" required>
+                        <option value="Available">Available</option>
+                        <option value="Issued">Issued</option>
+                    </select>
+
+                    <button type="submit" class="button">Add Book</button>
+                </form>
+            </div>
+
+            <h3>Available Books:</h3>
+            <ul id="book-list" class="book-list">
+                <!-- Dynamically generated book list -->
+            </ul>
+        </section>
+
+        <!-- Issue/Return Book Section -->
+        <section class="book-transaction">
+            <h2>Issue or Return Book</h2>
+            <div class="transaction-form-container">
+                <form id="transaction-form">
+                    <label for="transaction-book">Select Book:</label>
+                    <select id="transaction-book" required>
+                        <!-- Books will be populated here -->
+                    </select>
+
+                    <label for="transaction-type">Transaction Type:</label>
+                    <select id="transaction-type" required>
+                        <option value="Issue">Issue</option>
+                        <option value="Return">Return</option>
+                    </select>
+
+                    <button type="submit" class="button">Submit Transaction</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Library Management System. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

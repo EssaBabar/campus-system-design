@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    /* General Reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Arial', sans-serif;
+        line-height: 1.6;
+        background-color: #f9f9f9;
+        color: #333;
+    }
+
+    /* Header */
+    .header {
+        text-align: center;
+        padding: 20px;
+        background-color: #007bff;
+        color: white;
+    }
+
+    .header h1 {
+        font-size: 36px;
+    }
+
+    .header p {
+        font-size: 18px;
+    }
+
+    /* Main Container */
+    .main-container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Faculty Section */
+    .attendance-marking {
+        margin-bottom: 30px;
+    }
+
+    .attendance-marking h2 {
+        font-size: 24px;
+        color: #007bff;
+        margin-bottom: 10px;
+    }
+
+    .attendance-marking form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .attendance-marking label {
+        font-size: 14px;
+    }
+
+    .attendance-marking input,
+    .attendance-marking select {
+        padding: 10px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .attendance-marking .button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .attendance-marking .button:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+    }
+
+    /* Student Section */
+    .attendance-report h2 {
+        font-size: 24px;
+        color: #007bff;
+        margin-bottom: 10px;
+    }
+
+    .report-container {
+        padding: 10px;
+        background: #f1f1f1;
+        border-radius: 5px;
+    }
+
+    .report-container .button {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .report-list {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .report-list li {
+        background: #f1f1f1;
+        margin: 10px 0;
+        padding: 10px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .report-list li span {
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    /* Footer */
+    .footer {
+        text-align: center;
+        padding: 10px;
+        background-color: #f1f1f1;
+        margin-top: 20px;
+        font-size: 14px;
+    }
+</style>
+
+<body>
+    <header class="header">
+        <h1>Attendance Management System</h1>
+        <p>Facilitating faculty to mark attendance and students to track their records.</p>
+    </header>
+
+    <main class="main-container">
+        <!-- Faculty Section -->
+        <section class="attendance-marking">
+            <h2>Faculty: Mark Attendance</h2>
+            <form id="attendance-form">
+                <label for="student-name">Student Name:</label>
+                <input type="text" id="student-name" placeholder="Enter student's name" required>
+
+                <label for="attendance-status">Attendance Status:</label>
+                <select id="attendance-status" required>
+                    <option value="Present">Present</option>
+                    <option value="Absent">Absent</option>
+                </select>
+
+                <button type="submit" class="button">Mark Attendance</button>
+            </form>
+        </section>
+
+        <!-- Student Section -->
+        <section class="attendance-report">
+            <h2>Student: View Attendance Report</h2>
+            <div class="report-container">
+                <button class="button" id="view-report">View My Attendance</button>
+                <ul id="attendance-report-list" class="report-list">
+                    <!-- Attendance data will appear here -->
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Campus Management System. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

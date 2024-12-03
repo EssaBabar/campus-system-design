@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Announcements</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    /* General Reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Arial', sans-serif;
+        line-height: 1.6;
+        background-color: #f9f9f9;
+        color: #333;
+    }
+
+    /* Header */
+    .header {
+        text-align: center;
+        padding: 20px;
+        background-color: #007bff;
+        color: white;
+    }
+
+    .header h1 {
+        font-size: 36px;
+    }
+
+    .header p {
+        font-size: 18px;
+    }
+
+    /* Main Container */
+    .main-container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Admin Section */
+    .announcement-posting h2 {
+        font-size: 24px;
+        color: #007bff;
+        margin-bottom: 10px;
+    }
+
+    .announcement-posting form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .announcement-posting label {
+        font-size: 14px;
+    }
+
+    .announcement-posting input,
+    .announcement-posting textarea {
+        padding: 10px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .announcement-posting .button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .announcement-posting .button:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+    }
+
+    /* Announcement List Section */
+    .announcement-list h2 {
+        font-size: 24px;
+        color: #007bff;
+        margin-bottom: 10px;
+    }
+
+    .announcement-list-container {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .announcement-list-container li {
+        background: #f1f1f1;
+        margin: 10px 0;
+        padding: 15px;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .announcement-list-container li h3 {
+        font-size: 18px;
+        color: #333;
+    }
+
+    .announcement-list-container li p {
+        font-size: 14px;
+        color: #666;
+    }
+
+    .announcement-list-container li .date {
+        font-size: 12px;
+        color: #999;
+        margin-top: 5px;
+    }
+
+    /* Footer */
+    .footer {
+        text-align: center;
+        padding: 10px;
+        background-color: #f1f1f1;
+        margin-top: 20px;
+        font-size: 14px;
+    }
+</style>
+
+<body>
+    <header class="header">
+        <h1>Campus Announcements</h1>
+        <p>Admin can post notices and alerts. Students and faculty receive notifications.</p>
+    </header>
+
+    <main class="main-container">
+        <!-- Admin Section -->
+        <section class="announcement-posting">
+            <h2>Admin: Post an Announcement</h2>
+            <form id="announcement-form">
+                <label for="announcement-title">Title:</label>
+                <input type="text" id="announcement-title" placeholder="Enter announcement title" required>
+
+                <label for="announcement-content">Content:</label>
+                <textarea id="announcement-content" placeholder="Enter announcement content" required></textarea>
+
+                <button type="submit" class="button">Post Announcement</button>
+            </form>
+        </section>
+
+        <!-- User Section -->
+        <section class="announcement-list">
+            <h2>Latest Announcements</h2>
+            <ul id="announcement-list" class="announcement-list-container">
+                <!-- Announcements will be listed here -->
+            </ul>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Campus Management System. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
